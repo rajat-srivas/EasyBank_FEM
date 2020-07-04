@@ -15,6 +15,12 @@ a:hover {
     text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -27,6 +33,10 @@ body {
     &.noscroll {
         overflow: hidden;
     }
+    @include breakpoint-up(large) {
+        font-size: $font-lg;
+    }
+    overflow-x: hidden;
 }
 
 //flexbox helper
@@ -44,20 +54,54 @@ body {
 }
 
 .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    border: 1px solid red;
+    max-width: 90rem;
+    margin: 0 auto;
+    &--pt {
+        padding-top: 2.25rem;
+    }
+    &--pb {
+        padding-bottom: 2.25rem;
+    }
+    &--pl {
+        padding-left: 1.5rem;
+    }
+    &--pr {
+        padding-right: 1.5rem;
+    }
+    &--py {
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+    }
+    &--px {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+    &--all {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+    }
 }
 
 //Buttons 
 button,
 .button {
     padding: 0.875rem 2.1875rem;
+    display: inline-block;
     border-radius: 50px;
     cursor: pointer;
     background: linear-gradient(to right, $limeGreen, $brightCyan);
     border: 0;
     color: white;
     font-weight: 400;
+    font-size: $font-small;
+    color: $white;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+        opacity: 0.75;
+    }
 }
 
 //hide for mobile & tablet medium and down
