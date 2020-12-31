@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+    z-index: 2;
     .overlay {
         opacity: 0;
         background-image: linear-gradient($darkBlue, transparent);
